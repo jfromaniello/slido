@@ -35,8 +35,7 @@ app.post('/', function(request, response){
 
 app.get('/slide/:file', function(request, response){
 	fs.readFile(slidesDir + request.params.file + ".markdown", function(err, data){
-		if(err) throw err;
-		console.log("the markdown is " +  data.toString());
+		if(err) response.send(err, 500);
 		var html = md(data.toString());
 		response.send(html);
 	});
