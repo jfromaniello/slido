@@ -36,8 +36,6 @@ app.post('/', function(request, response){
 app.get('/slide/:file', function(request, response){
 	fs.readFile(slidesDir + request.params.file + ".markdown", function(err, data){
 		if(err) response.send(err, 500);
-		console.log("read: ", data);
-		console.log("md: ", md(data.toString()));
 		var html = util.wrapH1WithSlideDirective(md(data.toString()));
 		response.render("result", {slides: html, layout: false});
 	});
