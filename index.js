@@ -22,9 +22,18 @@ app.get('/', function(request, response) {
 	response.render("index");
 });
 
+function createSlideDirectoryIfNotExist(){
+	try{
+		fs.lstatSync(slidesDir);
+	}catch(e){
+		fs.mkdirSync(slidesDir);
+	}
+};
+
 app.post('/', function(request, response){
 	console.log("the markdown is " +  request.body.slideMarkdown);
-	var fileName = util.randomString() ;
+	var fileName = util.randomString();
+	createSlideDirectoryIfNotExist()
 	fs.writeFile(slidesDir + fileName + ".markdown", request.body.slideMarkdown, function(err){
 		if(!err)
 			response.redirect("/slide/" + fileName)
