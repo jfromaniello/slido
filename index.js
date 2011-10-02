@@ -26,7 +26,7 @@ function createSlideDirectoryIfNotExist(){
 	try{
 		fs.lstatSync(slidesDir);
 	}catch(e){
-		fs.mkdirSync(slidesDir);
+		fs.mkdirSync(slidesDir,0755);
 	}
 };
 
