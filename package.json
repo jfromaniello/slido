@@ -5,6 +5,7 @@
     "express": "2.4.6",
     "node-markdown": "*",
     "handlebars": "*",
-    "hbs": "*"
+    "hbs": "*",
+    "vows": "0.5.11"
   }
 }
