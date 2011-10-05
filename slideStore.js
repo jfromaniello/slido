@@ -16,31 +16,21 @@
 	};
 
 	function createSlideDirectoryIfNotExist(){
-		var future = Futures.future();
-		fs.lstat(slidesDir, function(err){
-			if(err)
-			{
-				fs.mkdir(slidesDir, 0755, function(err){
-					future.fulfill();
-				});
-			}
-			future.fulfill();
-		});
-		return future.passable();
+		try{
+			fs.lstatSync(slidesDir);
+		}catch(e){
+			fs.mkdirSync(slidesDir,0755);
+		}	 	
 	};
 
 	function saveSlide(content){
-		var future = Futures.future();
+		var future = Futures.future(),
+			id = randomstring(), 
+			file = slidesDir + id + ".markdown";
 
-		createSlideDirectoryIfNotExist()
-			.when(function(){
-				var id = randomstring(), 
-					file = slidesDir + id + ".markdown";
-
-				fs.writeFile(file, content, function(err){
-					future.fulfill(err, id);
-				});
-			}, this);
+		fs.writeFile(file, content, function(err){
+			future.fulfill(err, id);
+		});
 			
 		return future.passable();
 	};
