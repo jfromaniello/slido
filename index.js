@@ -30,6 +30,10 @@ app.post('/', function(request, response){
 		});  
 });
 
+app.get("favicon.ico", function(request, response){
+	response.send(404); //wink
+});
+
 app.get('/slide/:id', function(request, response){
 	slideStore.getSlide(request.params.id)
 		.when(function(err, markdown){
