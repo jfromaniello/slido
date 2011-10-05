@@ -16,7 +16,7 @@
 	};
 
 	function createSlideDirectoryIfNotExist(){
-		var future = Futures.future(this);
+		var future = Futures.future();
 		fs.lstat(slidesDir, function(err){
 			if(err)
 			{
