@@ -6,6 +6,7 @@
     "node-markdown": "*",
     "handlebars": "*",
     "hbs": "*",
-    "vows": "0.5.11"
+    "vows": "0.5.11",
+    "futures": ">=2.1.0"
   }
 }

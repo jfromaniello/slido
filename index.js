@@ -1,12 +1,9 @@
 var express = require('express'),
-	path = require("path"),
-	md = require('node-markdown').Markdown,
-	hbs = require("hbs"),
-	fs = require('fs'),
-	util = require('./util.js');
+	slideStore = require('./slideStore.js'),
+	slideGenerator = require('./slideGenerator.js'),
+	hbs = require("hbs");
 
 //var html = md("hello \n====\nthis is something important");
-var slidesDir = __dirname + "/slides/";
 var app = express.createServer(express.logger());
 
 app.configure(function(){
@@ -22,36 +19,27 @@ app.get('/', function(request, response) {
 	response.render("index");
 });
 
-function createSlideDirectoryIfNotExist(){
-	try{
-		fs.lstatSync(slidesDir);
-	}catch(e){
-		fs.mkdirSync(slidesDir,0755);
-	}
-};
-
 app.post('/', function(request, response){
-	console.log("the markdown is " +  request.body.slideMarkdown);
-	var fileName = util.randomString();
-	createSlideDirectoryIfNotExist()
-	fs.writeFile(slidesDir + fileName + ".markdown", request.body.slideMarkdown, function(err){
-		if(!err)
-			response.redirect("/slide/" + fileName)
-		else
-			response.send(err, 500);  
-	});  
+	slideStore.saveSlide(request.body.slideMarkdown)
+		.when(function(err, id){
+			if(err){
+				response.send(err, 500);
+			}else{
+				response.redirect("/slide/" + id);
+			}
+		});  
 });
 
-app.get('/slide/:file', function(request, response){
-	fs.readFile(slidesDir + request.params.file + ".markdown", function(err, data){
-		if(err) response.send(err, 500);
-		try{
-			var html = util.wrapH1WithSlideDirective(md(data.toString()));
-			response.render("result", {slides: html, layout: false});
-		}catch(ex){
-			response.send(ex, 500);		
-		};
-	});
+app.get('/slide/:id', function(request, response){
+	slideStore.getSlide(request.params.id)
+		.when(function(err, markdown){
+			if(err){
+				 response.send(err, 500);
+				 return;
+			}
+			var slideContent = slideGenerator.generateS6(markdown);
+			response.render("result", {slides: slideContent, layout: false});
+		});
 });
 
 
