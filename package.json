@@ -7,7 +7,7 @@
     "handlebars": "*",
     "hbs": "*",
     "vows": "0.5.11",
-    "futures": ">=2.1.0",
+    "futures": ">=2.3.1",
     "Array.prototype.forEachAsync": "*"
   }
 }
