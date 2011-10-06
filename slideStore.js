@@ -48,6 +48,10 @@
 		var file = slidesDir + id + ".markdown",
 			future = Futures.future();
 		fs.readFile(file, function(err, content){
+			if(err) {
+				future.fulfill(err);
+				return;
+			}
 			future.fulfill(err, content.toString());
 		});
 		return future.passable();
