@@ -20,6 +20,11 @@ app.get('/', function(request, response) {
 });
 
 app.post('/', function(request, response){
+	var text = request.body.slideMarkdown;
+	if(text.trim()) {
+		response.send("Markdown was empty...", 400);
+		return;
+	}
 	slideStore.saveSlide(request.body.slideMarkdown)
 		.when(function(err, id){
 			if(err){
