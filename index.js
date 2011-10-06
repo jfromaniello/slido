@@ -21,7 +21,7 @@ app.get('/', function(request, response) {
 
 app.post('/', function(request, response){
 	var text = request.body.slideMarkdown;
-	if(text.trim()) {
+	if(text.trim() === "") {
 		response.send("Markdown was empty...", 400);
 		return;
 	}
