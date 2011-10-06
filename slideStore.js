@@ -27,8 +27,7 @@
 		var future = Futures.future(),
 			id = randomstring(), 
 			file = slidesDir + id + ".markdown";
-		createSlideDirectoryIfNotExist()
-		
+
 		fs.writeFile(file, content, function(err){
 			future.fulfill(err, id);
 		});
