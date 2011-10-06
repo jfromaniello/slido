@@ -15,13 +15,13 @@
 		return randomstring;
 	};
 
-	function createSlideDirectoryIfNotExist(){
+	(function createSlideDirectoryIfNotExist(){
 		try{
 			fs.lstatSync(slidesDir);
 		}catch(e){
 			fs.mkdirSync(slidesDir,0755);
 		}	 	
-	};
+	})();
 
 	function saveSlide(content){
 		var future = Futures.future(),
