@@ -2,7 +2,7 @@
 	var slidesDir = __dirname + "/slides/",
 		fs = require('fs'),
 		Futures = require('futures'),
-		connString = "mongo://jfromaniello:Zkw1Ru7h@dbh55.mongolab.com:27557/slidito",
+		connString = process.env.connection_string,
 		Mongolian = require('mongolian'),
 		self = this;
 
