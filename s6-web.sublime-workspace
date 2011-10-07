@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"future",
+				"Futures"
+			],
+			[
+				"_id",
+				"_id"
+			],
+			[
+				"slid",
+				"slide"
+			],
+			[
+				"mark",
+				"markdown"
+			],
+			[
 				"conn",
 				"connString"
 			],
@@ -86,10 +102,6 @@
 			[
 				"pa",
 				"passable"
-			],
-			[
-				"future",
-				"future"
 			],
 			[
 				"fullfi",
@@ -195,7 +207,7 @@
 			"file": "slideStore.js",
 			"settings":
 			{
-				"buffer_size": 1398,
+				"buffer_size": 1585,
 				"line_ending": "Unix"
 			}
 		},
@@ -219,7 +231,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 1454,
+				"buffer_size": 1516,
 				"line_ending": "Unix"
 			}
 		},
@@ -349,15 +361,15 @@
 					"file": "slideStore.js",
 					"settings":
 					{
-						"buffer_size": 1398,
+						"buffer_size": 1585,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								534,
-								534
+								1146,
+								1146
 							]
 						],
 						"settings":
@@ -366,7 +378,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 288.0,
+						"translation.y": 458.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -430,15 +442,15 @@
 					"file": "index.js",
 					"settings":
 					{
-						"buffer_size": 1454,
+						"buffer_size": 1516,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								395,
-								395
+								1143,
+								1143
 							]
 						],
 						"settings":
@@ -447,7 +459,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 384.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
