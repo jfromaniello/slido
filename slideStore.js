@@ -43,10 +43,16 @@
 	};
 
 	function getSlide(id){
-		var query = {
-			_id: new Mongolian.ObjectId(id)
-		}, future = Futures.future();
+		var query;
+		var future = Futures.future();
 
+		try{
+			 query = { _id: new Mongolian.ObjectId(id)}
+		}catch(err){
+			future.fulfill("Invalid slide id.");
+			return future.passable();
+		}
+		
 		new Mongolian(connString)
 			.collection("slides")
 			.findOne(query, function(err, slide){

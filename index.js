@@ -42,7 +42,6 @@ app.get("favicon.ico", function(request, response){
 app.get('/slide/:id', function(request, response){
 	slideStore.getSlide(request.params.id)
 		.when(function(err, markdown){
-			console.log("super!!!", markdown);
 			if(err){
 				response.send(err, 500);
 				return;
