@@ -2,58 +2,64 @@
 	var slidesDir = __dirname + "/slides/",
 		fs = require('fs'),
 		Futures = require('futures'),
+		connString = "mongo://jfromaniello:2JLkZmA4@dbh55.mongolab.com:27557/slidito",
+		Mongolian = require('mongolian'),
 		self = this;
 
-	function randomstring () {
-		var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
-		var string_length = 8;
-		var randomstring = '';
-		for (var i=0; i<string_length; i++) {
-			var rnum = Math.floor(Math.random() * chars.length);
-			randomstring += chars.substring(rnum,rnum+1);
-		}
-		return randomstring;
-	};
-
-	(function createSlideDirectoryIfNotExist(){
-		try{
-			fs.lstatSync(slidesDir);
-		}catch(e){
-			fs.mkdirSync(slidesDir,0755);
-		}	 	
-	})();
 
 	function saveSlide(content){
-		var future = Futures.future(),
-			id = randomstring(), 
-			file = slidesDir + id + ".markdown";
+		var slide = {
+			text: content
+		}, future = Futures.future();
 
-		fs.writeFile(file, content, function(err){
-			future.fulfill(err, id);
-		});
-			
+		new Mongolian(connString)
+			.collection("slides")
+			.insert(slide, function(err, value){
+				if(err){
+					future.fulfill(err);
+					return
+				}
+				future.fulfill(err, slide._id.toString());
+			});
 		return future.passable();
 	};
 
 	function updateSlide (id, content){
-		var file = slidesDir + id + ".markdown",
-			future = Futures.future();
+		var slide = {
+			text: content,
+			_id: new Mongolian.ObjectId(id)
+		}, future = Futures.future();
 
-		fs.writeFile(file, content, future.fulfill);
-
+		new Mongolian(connString)
+			.collection("slides")
+			.save(slide, function(err, value){
+				if(err){
+					future.fulfill(err);
+					return
+				}	
+				future.fulfill(err, slide._id);
+			});
 		return future.passable();
 	};
 
 	function getSlide(id){
-		var file = slidesDir + id + ".markdown",
-			future = Futures.future();
-		fs.readFile(file, function(err, content){
-			if(err) {
-				future.fulfill(err);
-				return;
-			}
-			future.fulfill(err, content.toString());
-		});
+		var query = {
+			_id: new Mongolian.ObjectId(id)
+		}, future = Futures.future();
+
+		new Mongolian(connString)
+			.collection("slides")
+			.findOne(query, function(err, slide){
+				if(err){
+					future.fulfill(err);
+					return
+				}	
+				if(!slide){
+					future.fullfill(err, null);
+					return;
+				}
+				future.fulfill(err, slide.text);
+			});
 		return future.passable();
 	};
 

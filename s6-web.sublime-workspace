@@ -3,15 +3,223 @@
 	{
 		"selected_items":
 		[
+			[
+				"conn",
+				"connString"
+			],
+			[
+				"ful",
+				"fulfill"
+			],
+			[
+				"conte",
+				"content"
+			],
+			[
+				"create",
+				"createSlideDirectoryIfNotExist"
+			],
+			[
+				"update",
+				"updateSlide"
+			],
+			[
+				"slide",
+				"slideStore"
+			],
+			[
+				"expor",
+				"exports"
+			],
+			[
+				"getsl",
+				"getSlide"
+			],
+			[
+				"gets",
+				"getSlide"
+			],
+			[
+				"save",
+				"saveSlide"
+			],
+			[
+				"slides",
+				"slideStore"
+			],
+			[
+				"updatesli",
+				"updateSlide"
+			],
+			[
+				"getsli",
+				"getSlide"
+			],
+			[
+				"ra",
+				"randomstring"
+			],
+			[
+				"slidegene",
+				"slideGenerator"
+			],
+			[
+				"send",
+				"send"
+			],
+			[
+				"respon",
+				"response"
+			],
+			[
+				"createsli",
+				"createSlideDirectoryIfNotExist"
+			],
+			[
+				"slidestore",
+				"slideStore"
+			],
+			[
+				"pas",
+				"passable"
+			],
+			[
+				"pa",
+				"passable"
+			],
+			[
+				"future",
+				"future"
+			],
+			[
+				"fullfi",
+				"fullfill"
+			],
+			[
+				"passab",
+				"passable"
+			],
+			[
+				"futures",
+				"Futures"
+			],
+			[
+				"ex",
+				"exports"
+			],
+			[
+				"random",
+				"randomstring"
+			],
+			[
+				"createdi",
+				"createSlideDirectoryIfNotExist"
+			],
+			[
+				"hidd",
+				"hidden"
+			],
+			[
+				"getse",
+				"getSession"
+			],
+			[
+				"preven",
+				"preventDefault"
+			],
+			[
+				"slidedi",
+				"slidesDir"
+			],
+			[
+				"wrapconte",
+				"wrapContentWithSection"
+			],
+			[
+				"endof",
+				"endOfTitle"
+			],
+			[
+				"sub",
+				"substring"
+			],
+			[
+				"lengh",
+				"length"
+			],
+			[
+				"withhea",
+				"withHeaderTag"
+			],
+			[
+				"wrap",
+				"wrapH1WithHeaderTag"
+			],
+			[
+				"lastin",
+				"lastIndex"
+			],
+			[
+				"mat",
+				"match"
+			],
+			[
+				"index",
+				"index"
+			],
+			[
+				"match",
+				"match"
+			],
+			[
+				"filen",
+				"fileName"
+			],
+			[
+				"app",
+				"app"
+			],
+			[
+				"input",
+				"input"
+			],
+			[
+				"te",
+				"type"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "test.js",
+			"file": "slideStore.js",
 			"settings":
 			{
-				"buffer_size": 721,
+				"buffer_size": 1398,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/index.hbs",
+			"settings":
+			{
+				"buffer_size": 2728,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/result.hbs",
+			"settings":
+			{
+				"buffer_size": 7547,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 1454,
 				"line_ending": "Unix"
 			}
 		},
@@ -19,15 +227,7 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 163,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 12,
+				"buffer_size": 274,
 				"line_ending": "Unix"
 			}
 		}
@@ -35,11 +235,15 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 202.0,
 		"selected_items":
 		[
+			[
+				"html",
+				"HTML: Wrap Selection With Tag"
+			]
 		],
-		"width": 0.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -56,6 +260,27 @@
 	},
 	"file_history":
 	[
+		"/home/jfromaniello/Proyectos/s6-web/test.js",
+		"/home/jfromaniello/Proyectos/s6-web/util.js",
+		"/home/jfromaniello/Proyectos/s6-web/views/index.hbs",
+		"/home/jfromaniello/Proyectos/s6-web/Procfile",
+		"/home/jfromaniello/Proyectos/s6-web/package.json",
+		"/home/jfromaniello/Proyectos/s6-web/.gitignore",
+		"/home/jfromaniello/Proyectos/s6-web/node_modules/hbs/test/server/views/layout.hbs",
+		"/home/jfromaniello/Proyectos/s6-web/views/layout.hbs",
+		"/home/jfromaniello/Proyectos/s6-web/views/result.hbs",
+		"/home/jfromaniello/Proyectos/s6-web/index.js",
+		"/home/jfromaniello/Proyectos/s6-web/slideStore.js",
+		"/home/jfromaniello/Proyectos/s6-web/slideGenerator.js",
+		"/home/jfromaniello/Proyectos/s6-web/slides/dTWsyJXT.markdown",
+		"/home/jfromaniello/Proyectos/s6-web/public/pilot/lib/pilot/index.js",
+		"/home/jfromaniello/Proyectos/s6-web/public/boot.js",
+		"/home/jfromaniello/Proyectos/s6-web/public/boot/boot.js",
+		"/home/jfromaniello/Proyectos/s6-web/public/boot/untitled",
+		"/home/jfromaniello/Proyectos/s6-web/public/kitchen-sink-uncompressed.js",
+		"/home/jfromaniello/Proyectos/s6-web/public/ace/ace-uncompressed.js",
+		"/home/jfromaniello/Proyectos/s6-web/out.txt",
+		"/home/jfromaniello/Proyectos/s6-web/tests/s6md.js",
 		"/home/jfromaniello/Proyectos/s6-web/node_modules/hbs/test/server/views/index.hbs",
 		"/home/jfromaniello/Proyectos/s6-web/index.hbs",
 		"/home/jfromaniello/Proyectos/s6-web/index.hbm",
@@ -65,11 +290,11 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 87.0,
 		"include_history":
 		[
 		],
@@ -82,6 +307,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"utils",
+			"utils.js",
+			"prettify",
+			"prett",
+			"\n\nprettify",
+			"prettify.css",
+			"text",
+			"fixOldbro",
+			"IE",
+			"MSIE",
+			"Internet",
+			"\n\n\nInternet",
+			"isIE",
+			"\nis",
+			"fullfill",
+			"path"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -89,11 +330,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"fulfill"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
@@ -104,49 +346,50 @@
 			[
 				{
 					"buffer": 0,
-					"file": "test.js",
+					"file": "slideStore.js",
 					"settings":
 					{
-						"buffer_size": 721,
+						"buffer_size": 1398,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								600,
-								600
+								534,
+								534
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 288.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "package.json",
+					"file": "views/index.hbs",
 					"settings":
 					{
-						"buffer_size": 163,
+						"buffer_size": 2728,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								156,
-								156
+								334,
+								334
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -156,23 +399,80 @@
 				},
 				{
 					"buffer": 2,
-					"file": ".gitignore",
+					"file": "views/result.hbs",
 					"settings":
 					{
-						"buffer_size": 12,
+						"buffer_size": 7547,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12,
-								12
+								5049,
+								5049
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2.0,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 995.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.js",
+					"settings":
+					{
+						"buffer_size": 1454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								395,
+								395
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package.json",
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2.0,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -216,7 +516,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -224,6 +524,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"boot",
+				"/home/jfromaniello/Proyectos/s6-web/public/boot.js"
+			],
+			[
+				"kitch",
+				"public/kitchen-sink-uncompressed.js"
+			],
+			[
+				"index.hbs",
+				"views/index.hbs"
+			],
+			[
+				"layout",
+				"node_modules/hbs/test/server/views/layout.hbs"
+			],
 			[
 				"index.hb",
 				"node_modules/hbs/test/server/views/index.hbs"
@@ -243,6 +559,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 204.0,
 	"status_bar_visible": true
 }
