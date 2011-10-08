@@ -1,99 +1,97 @@
-<html>
-<head>
-  <title>{{title}}</title>
-  <style type="text/css" media="screen">
-    body {
-        overflow: hidden;
-    }
-    
-    #editor { 
-        margin: 0;
-        position: absolute;
-        top: 110;
-        bottom: 100;
-        left: 10;
-        right: 10;
-    }
-    .foot{
-    	position: absolute;
-        bottom: 0;
-    }
-  </style>
-</head>
-<body> 
-	<h1>Markdown to HTML5 slide</h1>
-	<p>Write your text here using the <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a>
-	and press submit. You will see an html5 slide pretty similar to the <a href="http://slides.html5rocks.com/">HTML5 rocks Google presentation</a>.</p>
-	<form id="formmd" method="post">
-		<pre id="editor">
-		</pre>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/bootstrap-alerts.js"></script>
+<script type="text/javascript" src="ace/ace.js"></script>
+<script type="text/javascript" src="ace/mode-markdown.js" charset="utf-8"></script>
+<script type="text/javascript" src="ace/theme-twilight.js" charset="utf-8"></script>
+<script type="text/javascript" src="scripts/jquery.tmpl.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var editor = ace.edit("editor"),
+        UndoManager = require("ace/undomanager").UndoManager,
+        MarkdownMode = require("ace/mode/markdown").Mode,
+        currentId;
+    editor.getSession().setMode(new MarkdownMode());
+    editor.getSession().setUseWrapMode(true);
+    editor.getSession().setWrapLimitRange(80, 80);
+    editor.getSession().setUndoManager(new UndoManager());
+    editor.renderer.setShowPrintMargin(false);
+    editor.setTheme("ace/theme/twilight");
 
-		<input type="hidden" id="slideMarkdown" name="slideMarkdown"></input>
-		<div class="foot">
-			<a id="showExample" href="#">example</a> <br />
-			<input type="submit" value="Generate slide" />
-			<p> This is heavily inspired in s5, s6, <a href="http://slideshow.rubyforge.org/">s9</a> and <a href="https://github.com/geraldb/slideshow-google-html5-slides">this template</a> from Gerald Bauer.
-			I am also using the <a href="http://ace.ajax.org/">ACE editor.</a>
-			</p> 
-		</div>
-	</form>
+  $(".previewslide").click(function(e){
+    if($(this).hasClass("disabled")) return false;
+    window.location.href += "slide/" + currentId;
+  });
 
-	
+  $(".saveslide").click(function(e){
+    e.preventDefault();
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	<script type="text/javascript" src="ace/ace.js"></script>
-	<script type="text/javascript" src="ace/mode-markdown.js" charset="utf-8"></script>
-	<script type="text/javascript" src="ace/theme-twilight.js" charset="utf-8"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){
-	    var editor = ace.edit("editor");
-	    var UndoManager = require("ace/undomanager").UndoManager;
-        var MarkdownMode = require("ace/mode/markdown").Mode;
-    	editor.getSession().setMode(new MarkdownMode());
-    	editor.getSession().setUseWrapMode(true);
-    	editor.getSession().setWrapLimitRange(80, 80);
-    	editor.getSession().setUndoManager(new UndoManager());
-    	editor.setTheme("ace/theme/twilight");
+    $.post(window.location.href,{
+      slideMarkdown: editor.getSession().getValue()
+    }).done(function(result){
+     $("#AlertTemplate").tmpl(result).prependTo($(".main"));
+     currentId = result.id;
+     $(".previewslide").removeClass("disabled");
+    }).fail(function(err){
+      //$("<div class='alert-message warning fade in' data-alert=alert'>Saved!</div>").alert();
+    })
+    return false;
+  });
 
-	    $("#formmd").submit(function(){
-	    	//e.preventDefault();
-	    	$("#slideMarkdown")
-	    	 	.val(editor.getSession().getValue());
-	    	return true;
-	    });
+  $(".showexample").click(function(e){  
+    e.preventDefault();
+    editor.getSession().setValue(
+      ['This is a test ',
+      '==============',
+      '',
+      'You can put some stuff here:',
+      '',
+      '* Item 1',
+      '* Item 2',
+      '* Item 3',
+      '',
+      '',
+      'And then another slide',
+      '======================',
+      '',
+      'Test',
+      '',
+      '* a',
+      '* b',
+      '* c'].join("\n"));
+    return false;
+  });
+});
+</script>
 
-		$("#showExample").click(function(e){	
-			e.preventDefault();
-			editor.getSession().setValue(
-				['This is a test ',
-				'==============',
-				'',
-				'You can put some stuff here:',
-				'',
-				'* Item 1',
-				'* Item 2',
-				'* Item 3',
-				'',
-				'',
-				'And then another slide',
-				'======================',
-				'',
-				'Test',
-				'',
-				'* a',
-				'* b',
-				'* c'].join("\n"));
-			return false;
-		});
-	});
-	</script>
-	<script>
-	    window.onload = function() {
-	    };
-	</script>
+<div class="container">
 
-</body>
-</html>
+  <div class="content">
+    <div class="page-header">
+      <h1>Slido <small>Write markdown and generate an HTML5 slideshow!</small></h1>
+    </div>
+    <div class="row">
+      <div class="span14 main" style="height: 700px">
+        <br />
 
+        <div class="well">
+          <input type="button" class="btn primary saveslide" value="Save" />
+          <input type="button" class="btn primary previewslide disabled" value="Preview" />
+          <input type="button" class="btn info showexample" value="Show me an example" />
+        </div>
+      	<div id="editor" class="span12" style="height: 600px" ></div>
 
+      </div>
+    </div>
+  </div>
 
+  <footer>
+
+  </footer>
+</div>
+
+<script id="AlertTemplate" type="text/x-jquery-tmpl">
+<div class="alert-message success fade in saved-alert" data-alert>
+  The slide was saved! Use this link to <a href="edit/${id}">edit the slide</a>.
+  <a class="close" href="#">×</a>
+</div>
+</script>

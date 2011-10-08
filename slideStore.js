@@ -2,7 +2,7 @@
 	var slidesDir = __dirname + "/slides/",
 		fs = require('fs'),
 		Futures = require('futures'),
-		connString = process.env.connection_string,
+		connString = process.env.connection_string || "mongo://localhost/slidito",
 		Mongolian = require('mongolian'),
 		self = this;
 

@@ -9,6 +9,7 @@ var app = express.createServer(express.logger());
 app.configure(function(){
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'hbs');
+	app.set('view options', { doctype: 'HTML' }); 
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(app.router);
@@ -30,7 +31,7 @@ app.post('/', function(request, response){
 			if(err){
 				response.send(err, 500);
 			}else{
-				response.redirect("/slide/" + id);
+				response.send({id: id});
 			}
 		});  
 });
