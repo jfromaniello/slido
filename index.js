@@ -39,6 +39,44 @@ app.post('/', function(request, response){
 		});  
 });
 
+app.get('/edit/:id', function(request, response){
+	var id = request.params.id;
+
+	slideStore.getSlide(id)
+		.when(function(err, markdown){
+			if(err){
+				response.send(err, 500);
+				return;
+			}
+			if(!markdown){
+				response.send(err, 404);
+				return;
+			}
+				response.render("index", {
+					title: "Slido - Html5 Slideshow Generator",
+					inHome: true,
+					slideId: id,
+					slideMarkdown: markdown
+				});
+		});
+});
+
+app.post('/edit/:id', function(request, response){
+	var text = request.body.slideMarkdown;
+	if(text.trim() === "") {
+		response.send("Markdown was empty...", 400);
+		return;
+	}
+	slideStore.updateSlide(request.params.id, request.body.slideMarkdown)
+		.when(function(err, id){
+			if(err){
+				response.send(err, 500);
+			}else{
+				response.send({id: id});
+			}
+		});  
+});
+
 app.get('/about', function(request, response){
 	response.render("about", {
 		title: "About",

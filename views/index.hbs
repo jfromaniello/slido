@@ -1,15 +1,15 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/bootstrap-alerts.js"></script>
-<script type="text/javascript" src="ace/ace.js"></script>
-<script type="text/javascript" src="ace/mode-markdown.js" charset="utf-8"></script>
-<script type="text/javascript" src="ace/theme-twilight.js" charset="utf-8"></script>
-<script type="text/javascript" src="scripts/jquery.tmpl.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/scripts/bootstrap-alerts.js"></script>
+<script type="text/javascript" src="/ace/ace.js"></script>
+<script type="text/javascript" src="/ace/mode-markdown.js" charset="utf-8"></script>
+<script type="text/javascript" src="/ace/theme-twilight.js" charset="utf-8"></script>
+<script type="text/javascript" src="/scripts/jquery.tmpl.min.js" charset="utf-8"></script>
 <script type="text/javascript">
 $(document).ready(function(){
     var editor = ace.edit("editor"),
         UndoManager = require("ace/undomanager").UndoManager,
         MarkdownMode = require("ace/mode/markdown").Mode,
-        currentId,
+        currentId = "{{slideId}}",
         editorSession = editor.getSession();
 
   editorSession.setMode(new MarkdownMode());
@@ -24,11 +24,16 @@ $(document).ready(function(){
     if($(this).hasClass("disabled")) return false;
     window.location.href += "slide/" + currentId;
   });
+  
+  if(currentId){
+    $(".previewslide").removeClass("disabled");
+  }
 
   $(".saveslide").click(function(e){
     e.preventDefault();
+    var locationToPost = window.location.href;
 
-    $.post(window.location.href,{
+    $.post(locationToPost, {
       slideMarkdown: editor.getSession().getValue()
     }).done(function(result){
      $("#AlertTemplate").tmpl(result).prependTo($(".main"));
@@ -36,7 +41,8 @@ $(document).ready(function(){
      $(".previewslide").removeClass("disabled");
     }).fail(function(err){
       //$("<div class='alert-message warning fade in' data-alert=alert'>Saved!</div>").alert();
-    })
+    });
+
     return false;
   });
 
@@ -80,7 +86,7 @@ $(document).ready(function(){
           <input type="button" class="btn primary previewslide disabled" value="Preview" />
           <input type="button" class="btn info showexample" value="Show me an example" />
         </div>
-      	<div id="editor" class="span12" style="height: 600px" ></div>
+      	<div id="editor" class="span12" style="height: 600px" >{{slideMarkdown}}</div>
       </div>
     </div>
   </div>
@@ -88,7 +94,7 @@ $(document).ready(function(){
 
 <script id="AlertTemplate" type="text/x-jquery-tmpl">
 <div class="alert-message success fade in saved-alert" data-alert>
-  The slide was saved! Save this link if you plan to <a href="edit/${id}" rel="nofollow" title="Slido ${id}">edit the slide</a> in the future.
+  The slide was saved! Save this link if you plan to <a href="/edit/${id}" rel="nofollow" title="Slido ${id}">edit the slide</a> in the future.
   <a class="close" href="#">×</a>
 </div>
 </script>
