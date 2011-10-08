@@ -4,20 +4,20 @@
 	function wrapH1WithHeaderTag(slide){
 		var rx = /<h1.*<\/h1>/i,
 			match = slide.match(rx);
-		return slide.replace(rx, "<header>" + match + "</header>")	
-	};
+		return slide.replace(rx, "<header>" + match + "</header>");	
+	}
 
 	function wrapContentWithSection(slide){
 		var endOfTitle = slide.indexOf("</header>") + "</header>".length,
 			title = slide.substring(0, endOfTitle),
 			content = slide.substring(endOfTitle);
-		return title + "<section class=\"small\">" + content + "</slide>"; 	
-	};
+		return title + "<section class=\"small\">" + content + "</section>";
+	}
 
 	function enhanceSlide(slide){
 		var withHeaderTag = wrapH1WithHeaderTag(slide);
 		return wrapContentWithSection(withHeaderTag);	
-	};
+	}
 
 	function wrapH1WithSlideDirective(html){
 		var regex = /<h1>/gi,
@@ -26,7 +26,7 @@
 			lastIndex = 0;
 		
 		do{
-			var slide = html.substring(lastIndex, match.index - lastIndex)
+			var slide = html.substring(lastIndex, match.index - lastIndex);
 			if(slide) slides.push(enhanceSlide(slide));
 			lastIndex = match.index;
 			match = regex.exec(html);
@@ -41,7 +41,7 @@
 			}).reduce(function(prev, slide){
 				return prev + slide;
 			});
-	};
+	}
 
 	module.exports.generateS6 = function(content){
 		return wrapH1WithSlideDirective(md(content));
