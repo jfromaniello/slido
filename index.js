@@ -17,7 +17,10 @@ app.configure(function(){
 });
 
 app.get('/', function(request, response) {
-	response.render("index");
+	response.render("index", {
+		title: "Slido - Html5 Slideshow Generator",
+		inHome: true
+	});
 });
 
 app.post('/', function(request, response){
@@ -36,8 +39,11 @@ app.post('/', function(request, response){
 		});  
 });
 
-app.get("favicon.ico", function(request, response){
-	response.send(404); //wink
+app.get('/about', function(request, response){
+	response.render("about", {
+		title: "About",
+		inAbout: true
+	})	
 });
 
 app.get('/slide/:id', function(request, response){

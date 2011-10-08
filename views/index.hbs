@@ -9,13 +9,16 @@ $(document).ready(function(){
     var editor = ace.edit("editor"),
         UndoManager = require("ace/undomanager").UndoManager,
         MarkdownMode = require("ace/mode/markdown").Mode,
-        currentId;
-    editor.getSession().setMode(new MarkdownMode());
-    editor.getSession().setUseWrapMode(true);
-    editor.getSession().setWrapLimitRange(80, 80);
-    editor.getSession().setUndoManager(new UndoManager());
-    editor.renderer.setShowPrintMargin(false);
-    editor.setTheme("ace/theme/twilight");
+        currentId,
+        editorSession = editor.getSession();
+
+  editorSession.setMode(new MarkdownMode());
+  editorSession.setUseWrapMode(true);
+  editorSession.setWrapLimitRange(80, 80);
+  editorSession.setUndoManager(new UndoManager());
+  
+  editor.renderer.setShowPrintMargin(false);
+  editor.setTheme("ace/theme/twilight");
 
   $(".previewslide").click(function(e){
     if($(this).hasClass("disabled")) return false;
@@ -67,31 +70,25 @@ $(document).ready(function(){
 
   <div class="content">
     <div class="page-header">
-      <h1>Slido <small>Write markdown and generate an HTML5 slideshow!</small></h1>
+      <h1>Write markdown and generate an HTML5 slideshow</h1>
     </div>
     <div class="row">
       <div class="span14 main" style="height: 700px">
         <br />
-
         <div class="well">
           <input type="button" class="btn primary saveslide" value="Save" />
           <input type="button" class="btn primary previewslide disabled" value="Preview" />
           <input type="button" class="btn info showexample" value="Show me an example" />
         </div>
       	<div id="editor" class="span12" style="height: 600px" ></div>
-
       </div>
     </div>
   </div>
-
-  <footer>
-
-  </footer>
 </div>
 
 <script id="AlertTemplate" type="text/x-jquery-tmpl">
 <div class="alert-message success fade in saved-alert" data-alert>
-  The slide was saved! Use this link to <a href="edit/${id}">edit the slide</a>.
+  The slide was saved! Save this link if you plan to <a href="edit/${id}" rel="nofollow" title="Slido ${id}">edit the slide</a> in the future.
   <a class="close" href="#">×</a>
 </div>
 </script>
