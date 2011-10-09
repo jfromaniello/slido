@@ -20,23 +20,31 @@
 	}
 
 	function wrapH1WithSlideDirective(html){
-		var regex = /<h1>/gi,
+		var regex = /<h1>|<div class="slide/gi,
 			slides = [], 
-			match = regex.exec(html),
+			match = regex.exec(html), 
+			lastSlide = match === undefined,
 			lastIndex = 0;
-		
+
 		do{
-			var slide = html.substring(lastIndex, match.index - lastIndex);
-			if(slide) slides.push(enhanceSlide(slide));
+			var slide = lastSlide ? html.substring(lastIndex)
+								  : html.substring(lastIndex, match.index - lastIndex);
+			if(slide) {
+				if(slide.indexOf("<div class=\"slide") > -1){
+					slides.push(slide);
+				}else{
+					slides.push(enhanceSlide(slide));
+				}
+			}
+			if(lastSlide) break;
 			lastIndex = match.index;
-			match = regex.exec(html);
-		}while(match);
+		}while((match = regex.exec(html), lastSlide = !lastSlide && !match), match || lastSlide);
 
-		slides.push(enhanceSlide(html.substring(lastIndex)));
-
+		
 
 		return slides
 			.map(function(slide){
+				if(slide.indexOf("<div class=\"slide") > -1) return slide;
 				return "<div class=\"slide\">\n" + slide + "\n</div>\n";
 			}).reduce(function(prev, slide){
 				return prev + slide;

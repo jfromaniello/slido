@@ -55,6 +55,17 @@ vows.describe('SlideGenerator').addBatch({
         'has two slide sections': function (topic) {
             assert.hasOccurrences (topic, "<div class=\"slide\">", 2);
         }
+    },
+
+    "when script has a ready slide":{
+        //"<div class=\"slide\">\n" + slide + "\n</div>\n"
+        topic: function () { 
+            return slideGenerator.generateS6("<div class=\"slide\">\nTest Test Test\n</div>\n"); 
+        },
+
+        'dont touch the slide': function(topic){
+            assert.equal(topic, "<div class=\"slide\">\nTest Test Test\n</div>"); 
+        }
     }
 
 }).run(); // Run it
