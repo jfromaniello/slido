@@ -508,11 +508,19 @@
   // Initialize
   var li_array = [];
   var transitionSlides = queryAll('.transitionSlide').forEach(function(el) {
-    li_array.push( ['<li><a data-hash="', el.id, '">',
-                    query('h2', el).textContent, '</a><img src="',
-                    query('img', el).src.replace(/64/g, '32'),
-                    '"/></li>'].join('')
+    var section_image = query('img', el);
+    if(section_image){
+      li_array.push( ['<li><a data-hash="', el.id, '">',
+                    query('h2', el).textContent, '</a>',
+                    '<img src="', section_image.src.replace(/64/g, '32'), '"/>',
+                    '</li>'].join('')
                  );
+    }else{
+      li_array.push( ['<li><a data-hash="', el.id, '">',
+              query('h2', el).textContent, '</a>',
+              '</li>'].join('')
+           );
+    }
   });
   var toc_list = query('#toc-list');
 
