@@ -27,8 +27,8 @@
 			lastIndex = 0;
 
 		do{
-			var slide = lastSlide ? html.substr(lastIndex)
-								  : html.substr(lastIndex, match.index - lastIndex);
+			var slide = lastSlide || !match ? html.substr(lastIndex)
+											: html.substr(lastIndex, match.index - lastIndex);
 			if(slide) {
 				if(slide.indexOf("<div class=\"slide") > -1){
 					slides.push(slide);
@@ -36,7 +36,7 @@
 					slides.push(enhanceSlide(slide));
 				}
 			}
-			if(lastSlide) break;
+			if(lastSlide || !match) break;
 			lastIndex = match.index;
 		}while((match = regex.exec(html), lastSlide = !lastSlide && !match), match || lastSlide);
 

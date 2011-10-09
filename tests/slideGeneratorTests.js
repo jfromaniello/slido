@@ -104,6 +104,17 @@ vows.describe('SlideGenerator').addBatch({
                                 "<section class=\"small\"><p>content</p></section>\n" +
                                 "</div>\n"); 
         }
+    },
+
+    "when slide does not have any h1":{
+        //"<div class=\"slide\">\n" + slide + "\n</div>\n"
+        topic: function () { 
+            return slideGenerator.generateS6("dasd"); 
+        },
+
+        'dont touch the slide': function(topic){
+            assert.equal(topic, '<div class="slide">\n<p>dasd<\n<section class="small">/p></section>\n</div>\n'); 
+        }
     }
 
 }).run(); // Run it
