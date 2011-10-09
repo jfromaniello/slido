@@ -4,6 +4,186 @@
 		"selected_items":
 		[
 			[
+				"alig",
+				"align"
+			],
+			[
+				"text",
+				"text"
+			],
+			[
+				"lef",
+				"left"
+			],
+			[
+				"paddin",
+				"padding"
+			],
+			[
+				"color",
+				"color"
+			],
+			[
+				"nor",
+				"normal"
+			],
+			[
+				"we",
+				"weight"
+			],
+			[
+				"font",
+				"font: font-family: family"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"colo",
+				"color"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"savesli",
+				"saveSlide"
+			],
+			[
+				"sec",
+				"section_image"
+			],
+			[
+				"lasts",
+				"lastSlide"
+			],
+			[
+				"mat",
+				"match"
+			],
+			[
+				"lastsli",
+				"lastSlide"
+			],
+			[
+				"undefin",
+				"undefined"
+			],
+			[
+				"last",
+				"lastSlide"
+			],
+			[
+				"push",
+				"push"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"start",
+				"start"
+			],
+			[
+				"toc_sec",
+				"toc_section"
+			],
+			[
+				"removechi",
+				"removeChild"
+			],
+			[
+				"parent",
+				"parentNode"
+			],
+			[
+				"toc",
+				"toc_list"
+			],
+			[
+				"leg",
+				"length"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"star",
+				"startsWith"
+			],
+			[
+				"contain",
+				"contains"
+			],
+			[
+				"asser",
+				"assert"
+			],
+			[
+				"indexo",
+				"indexOf"
+			],
+			[
+				"s",
+				"slideGenerator"
+			],
+			[
+				"inde",
+				"indexOf"
+			],
+			[
+				"curren",
+				"currentId"
+			],
+			[
+				"mard",
+				"markdown"
+			],
+			[
+				"id",
+				"id"
+			],
+			[
+				"previe",
+				"previewslide"
+			],
+			[
+				"href",
+				"href"
+			],
+			[
+				"scrip",
+				"script"
+			],
+			[
+				"script",
+				"scripts"
+			],
+			[
+				"block",
+				"blockui"
+			],
+			[
+				"resul",
+				"result"
+			],
+			[
+				"getse",
+				"getSession"
+			],
+			[
+				"class",
+				"class"
+			],
+			[
+				"sty",
+				"stylesheet"
+			],
+			[
 				"future",
 				"Futures"
 			],
@@ -132,10 +312,6 @@
 				"hidden"
 			],
 			[
-				"getse",
-				"getSession"
-			],
-			[
 				"preven",
 				"preventDefault"
 			],
@@ -172,14 +348,6 @@
 				"lastIndex"
 			],
 			[
-				"mat",
-				"match"
-			],
-			[
-				"index",
-				"index"
-			],
-			[
 				"match",
 				"match"
 			],
@@ -204,10 +372,42 @@
 	"buffers":
 	[
 		{
-			"file": "slideStore.js",
+			"file": "tests/slideGeneratorTests.js",
 			"settings":
 			{
-				"buffer_size": 1585,
+				"buffer_size": 5025,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jfromaniello/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+			"settings":
+			{
+				"buffer_size": 29426,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "node_modules/assert/assert.js",
+			"settings":
+			{
+				"buffer_size": 9926,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/layout.hbs",
+			"settings":
+			{
+				"buffer_size": 2875,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "slideGenerator.js",
+			"settings":
+			{
+				"buffer_size": 1576,
 				"line_ending": "Unix"
 			}
 		},
@@ -215,31 +415,89 @@
 			"file": "views/index.hbs",
 			"settings":
 			{
-				"buffer_size": 2728,
+				"buffer_size": 3556,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/markitup/sets/style.css",
+			"settings":
+			{
+				"buffer_size": 1322,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/markitup/markdown.config.js",
+			"settings":
+			{
+				"buffer_size": 2469,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "slideGenerator.js",
+			"settings":
+			{
+				"buffer_size": 1597,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/slide/prettify/utils.js",
+			"settings":
+			{
+				"buffer_size": 16630,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/markitup/sets/markdown/set.js",
+			"settings":
+			{
+				"buffer_size": 2471,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/markitup/skins/simple/style.css",
+			"settings":
+			{
+				"buffer_size": 2477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/about.hbs",
+			"settings":
+			{
+				"buffer_size": 1706,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/slide/css/metro.css",
+			"settings":
+			{
+				"buffer_size": 12681,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 912 files for \"moon\"\n\n/home/jfromaniello/Proyectos/s6-web/public/slide/css/metro.css:\n    1  /**\n    2:  * HTML5 Slide Deck Theme - Moon\n    3   * Author: Jose Romaniello <jfromaniello@gmail.com>\n    4   */\n\n/home/jfromaniello/Proyectos/s6-web/public/slide/css/moon.css:\n    1  /**\n    2:  * HTML5 Slide Deck Theme - Moon\n    3   * Author: Eric Bidelman <ericbidelman@html5rocks.com>\n    4   */\n\n/home/jfromaniello/Proyectos/s6-web/views/result.hbs:\n   28      <link href=\"http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono\" rel=\"stylesheet\" type=\"text/css\" />\n   29      <link id=\"prettify-link\" href=\"prettify/prettify.css\" rel=\"stylesheet\" disabled />\n   30:     <link href=\"css/moon.css\" class=\"theme\" rel=\"stylesheet\" />\n   31      <link href=\"css/sand.css\" class=\"theme\" rel=\"stylesheet\" />\n   32      <link href=\"css/sea_wave.css\" class=\"theme\" rel=\"stylesheet\" />\n\n3 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 923,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
 			"file": "views/result.hbs",
 			"settings":
 			{
-				"buffer_size": 7547,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "index.js",
-			"settings":
-			{
-				"buffer_size": 1516,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 274,
+				"buffer_size": 7612,
 				"line_ending": "Unix"
 			}
 		}
@@ -247,9 +505,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 202.0,
+		"height": 31.0,
 		"selected_items":
 		[
+			[
+				"sublimen",
+				"SublimeLinter: Enable Background Linting"
+			],
 			[
 				"html",
 				"HTML: Wrap Selection With Tag"
@@ -259,7 +521,7 @@
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 129.0
 	},
 	"distraction_free":
 	{
@@ -272,17 +534,22 @@
 	},
 	"file_history":
 	[
-		"/home/jfromaniello/Proyectos/s6-web/test.js",
-		"/home/jfromaniello/Proyectos/s6-web/util.js",
+		"/home/jfromaniello/Proyectos/s6-web/result.txt",
+		"/home/jfromaniello/.config/sublime-text-2/Packages/Default/Base File.sublime-settings",
+		"/home/jfromaniello/Proyectos/s6-web/slideStore.js",
 		"/home/jfromaniello/Proyectos/s6-web/views/index.hbs",
-		"/home/jfromaniello/Proyectos/s6-web/Procfile",
-		"/home/jfromaniello/Proyectos/s6-web/package.json",
-		"/home/jfromaniello/Proyectos/s6-web/.gitignore",
-		"/home/jfromaniello/Proyectos/s6-web/node_modules/hbs/test/server/views/layout.hbs",
-		"/home/jfromaniello/Proyectos/s6-web/views/layout.hbs",
+		"/home/jfromaniello/clean-start-mongo.sh",
+		"/home/jfromaniello/Proyectos/s6-web/views/about.hbs",
 		"/home/jfromaniello/Proyectos/s6-web/views/result.hbs",
 		"/home/jfromaniello/Proyectos/s6-web/index.js",
-		"/home/jfromaniello/Proyectos/s6-web/slideStore.js",
+		"/home/jfromaniello/Proyectos/s6-web/package.json",
+		"/home/jfromaniello/Proyectos/s6-web/node_modules/hbs/lib/hbs.js",
+		"/home/jfromaniello/Proyectos/s6-web/views/layout.hbs",
+		"/home/jfromaniello/Proyectos/s6-web/.gitignore",
+		"/home/jfromaniello/Proyectos/s6-web/test.js",
+		"/home/jfromaniello/Proyectos/s6-web/util.js",
+		"/home/jfromaniello/Proyectos/s6-web/Procfile",
+		"/home/jfromaniello/Proyectos/s6-web/node_modules/hbs/test/server/views/layout.hbs",
 		"/home/jfromaniello/Proyectos/s6-web/slideGenerator.js",
 		"/home/jfromaniello/Proyectos/s6-web/slides/dTWsyJXT.markdown",
 		"/home/jfromaniello/Proyectos/s6-web/public/pilot/lib/pilot/index.js",
@@ -302,16 +569,19 @@
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 87.0,
 		"include_history":
 		[
+			""
 		],
 		"location_history":
 		[
+			"/home/jfromaniello/Proyectos/s6-web/",
+			"/home/jfromaniello/Proyectos/s6-web/node_modules/handlebars"
 		]
 	},
 	"find_state":
@@ -319,6 +589,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"h2",
+			"h2 {",
+			"h2",
+			".presentation",
+			"theme",
+			"moon",
+			"select",
+			"column",
+			"#toc",
+			"toc-list",
+			"// Initi",
+			".ok",
+			"DOCTYPE",
+			"doctype",
+			"	    var editor = ace.edit(\"editor\");\n	    var UndoManager = require(\"ace/undomanager\").UndoManager;\n        var MarkdownMode = require(\"ace/mode/markdown\").Mode;\n    	editor.getSession().setMode(new MarkdownMode());\n    	editor.getSession().setUseWrapMode(true);\n    	editor.getSession().setWrapLimitRange(80, 80);\n    	editor.getSession().setUndoManager(new UndoManager());\n    	editor.setTheme(\"ace/theme/twilight\");\n\n	    $(\"#formmd\").submit(function(){\n	    	//e.preventDefault();\n	    	$(\"#slideMarkdown\")\n	    	 	.val(editor.getSession().getValue());\n	    	return true;\n	    });",
 			"utils",
 			"utils.js",
 			"prettify",
@@ -347,82 +632,112 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "slideStore.js",
+					"file": "tests/slideGeneratorTests.js",
 					"settings":
 					{
-						"buffer_size": 1585,
+						"buffer_size": 5025,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1146,
-								1146
+								3432,
+								3432
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4.0,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 458.0,
+						"translation.y": 1189.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "views/index.hbs",
+					"file": "/home/jfromaniello/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
 					"settings":
 					{
-						"buffer_size": 2728,
+						"buffer_size": 29426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								334,
-								334
+								1651,
+								1610
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 411.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "views/result.hbs",
+					"file": "node_modules/assert/assert.js",
 					"settings":
 					{
-						"buffer_size": 7547,
+						"buffer_size": 9926,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5049,
-								5049
+								3827,
+								3722
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2.0,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1307.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/layout.hbs",
+					"settings":
+					{
+						"buffer_size": 2875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1941,
+								1941
 							]
 						],
 						"settings":
@@ -432,25 +747,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 995.0,
+						"translation.y": 624.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "index.js",
+					"buffer": 4,
+					"file": "slideGenerator.js",
 					"settings":
 					{
-						"buffer_size": 1516,
+						"buffer_size": 1576,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1143,
-								1143
+								0,
+								0
 							]
 						],
 						"settings":
@@ -459,35 +774,334 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 384.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "package.json",
+					"buffer": 5,
+					"file": "views/index.hbs",
 					"settings":
 					{
-						"buffer_size": 274,
+						"buffer_size": 3556,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								267,
-								267
+								3465,
+								3465
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2.0,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 1104.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/markitup/sets/style.css",
+					"settings":
+					{
+						"buffer_size": 1322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								524,
+								524
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 133.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/markitup/markdown.config.js",
+					"settings":
+					{
+						"buffer_size": 2469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1982,
+								1982
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4.0,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "slideGenerator.js",
+					"settings":
+					{
+						"buffer_size": 1597,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1287,
+								1287
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 192.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "public/slide/prettify/utils.js",
+					"settings":
+					{
+						"buffer_size": 16630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16506,
+								16508
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2.0,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8363.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "public/markitup/sets/markdown/set.js",
+					"settings":
+					{
+						"buffer_size": 2471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2471,
+								2471
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4.0,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 96.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "public/markitup/skins/simple/style.css",
+					"settings":
+					{
+						"buffer_size": 2477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								785,
+								785
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 288.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "views/about.hbs",
+					"settings":
+					{
+						"buffer_size": 1706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1144,
+								1144
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "public/slide/css/metro.css",
+					"settings":
+					{
+						"buffer_size": 12681,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8218,
+								8218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2.0,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4701.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"settings":
+					{
+						"buffer_size": 923,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										142,
+										146
+									],
+									[
+										327,
+										331
+									],
+									[
+										707,
+										711
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								709,
+								709
+							]
+						],
+						"settings":
+						{
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "views/result.hbs",
+					"settings":
+					{
+						"buffer_size": 7612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1558,
+								1563
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2.0,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 203.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -497,7 +1111,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 32.0
 	},
 	"input":
 	{
@@ -536,6 +1150,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"result",
+				"result.txt"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
 			[
 				"boot",
 				"/home/jfromaniello/Proyectos/s6-web/public/boot.js"

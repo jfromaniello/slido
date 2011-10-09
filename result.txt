@@ -1,0 +1,7 @@
+[32m·[39m[32m·[39m[32m·[39m[32m·[39m[32m·[39m[32m·[39m[33m✗[39m 
+
+  when script has a ready slide and not ready
+    ✗ [33mdont touch the slide[39m
+      » [33mexpected [1m'<div class="slide transitionSlide" id="offline-storage-title">\n  <section class="middle">\n   <h2>Offline / Storage</h2>\n   <p>Expect the unexpected</p>\n  </section>\n</div>\n\n<div class="slide">\n<header><h1>title</h1></header>\n<section class="small"><p>content</p></section>\n</div>\n<div class="slide">\n<header><h1>title</h1></header>\n<section class="small"><p>content</p></section>\n</div>\n'[22m,
+	got	 [1m'<div class="slide transitionSlide" id="offline-storage-title">\n  <section class="middle">\n   <h2>Offline / Storage</h2>\n   <p>Expect the unexpected</p>\n  </section>\n</div>\n\n<div class="slide">\n<header><h1>title</h1></header>\n<section class="small"></section>\n</div>\n<div class="slide">\n<header><h1>contenttitle</h1></header>\n<section class="small"><p>content</p></section>\n</div>\n'[22m ([1m==[22m)[39m[90m // slideGeneratorTests.js:92[39m
+✗ [33m[1mBroken[22m[39m » [1m6[22m honored ∙ [1m1[22m broken[90m (0.030s)[39m

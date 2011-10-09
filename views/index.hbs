@@ -1,29 +1,19 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="/scripts/bootstrap-alerts.js"></script>
-<script type="text/javascript" src="/ace/ace.js"></script>
-<script type="text/javascript" src="/ace/mode-markdown.js" charset="utf-8"></script>
-<script type="text/javascript" src="/ace/theme-twilight.js" charset="utf-8"></script>
+<script type="text/javascript" src="markitup/jquery.markitup.js"></script>\
+<script type="text/javascript" src="markitup/sets/markdown/set.js"></script>
+<link rel="stylesheet" type="text/css" href="markitup/skins/simple/style.css" />
+<link rel="stylesheet" type="text/css" href="markitup/sets/markdown/style.css" />
 <script type="text/javascript" src="/scripts/jquery.tmpl.min.js" charset="utf-8"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-    var editor = ace.edit("editor"),
-        UndoManager = require("ace/undomanager").UndoManager,
-        MarkdownMode = require("ace/mode/markdown").Mode,
-        currentId = "{{slideId}}",
-        editorSession = editor.getSession();
+  var currentId = "{{slideId}}";
+  $('#editor').markItUp(myMarkdownSettings);
 
-  editorSession.setMode(new MarkdownMode());
-  editorSession.setUseWrapMode(true);
-  editorSession.setWrapLimitRange(80, 80);
-  editorSession.setUndoManager(new UndoManager());
-  
-  editor.renderer.setShowPrintMargin(false);
-  editor.setTheme("ace/theme/twilight");
-  
   function saveSlide(){
     var locationToPost = window.location.href;
     return $.post(locationToPost, {
-      slideMarkdown: editor.getSession().getValue()
+      slideMarkdown: $("#editor").val()
     });
   }
 
@@ -32,7 +22,7 @@ $(document).ready(function(){
       .done(function(result){
         window.location.href = "/slide/" + result.id;
       }).fail(function(err){
-        $("#ErrorTemplate").tmpl({err: err}).prependTo($(".main"));
+        $("#ErrorTemplate").tmpl({err: err.responseText}).prependTo($(".main"));
       });
     
   });
@@ -44,14 +34,14 @@ $(document).ready(function(){
      $("#AlertTemplate").tmpl(result).prependTo($(".main"));
      currentId = result.id;
     }).fail(function(err){
-     $("#ErrorTemplate").tmpl({err: err}).prependTo($(".main"));
+     $("#ErrorTemplate").tmpl({err: err.responseText}).prependTo($(".main"));
     });
     return false;
   });
 
   $(".showexample").click(function(e){  
     e.preventDefault();
-    editor.getSession().setValue(
+    $("#editor").val(
       ["<div class=\"slide transitionSlide\" id=\"my-sample-section\">",
       "  <section class=\"middle\">",
       "    <h2>This is a section</h2>",
@@ -99,7 +89,7 @@ $(document).ready(function(){
           <input type="button" class="btn primary previewslide" value="Preview" />
           <input type="button" class="btn info showexample" value="Show me an example" />
         </div>
-      	<div id="editor" class="span12" style="height: 600px" >{{slideMarkdown}}</div>
+      	<textarea id="editor" class="span12" style="width: 805px; height: 550px;">{{slideMarkdown}}</textarea>
       </div>
     </div>
   </div>
@@ -114,7 +104,6 @@ $(document).ready(function(){
 
 <script id="ErrorTemplate" type="text/x-jquery-tmpl">
 <div class="alert-message error fade in saved-alert" data-alert>
-  mhm.. something wrong happen. this is so embarasing. <br />
   ${err}
   <a class="close" href="#">×</a>
 </div>
