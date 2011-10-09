@@ -17,7 +17,7 @@
 
   var query = function(query, root) {
     return queryAll(query, root)[0];
-  }
+  };
 
   var queryAll = function(query, root) {
     if (!query) { return []; }
@@ -514,8 +514,18 @@
                     '"/></li>'].join('')
                  );
   });
+  var toc_list = query('#toc-list');
 
-  query('#toc-list').innerHTML = li_array.join('');
+  if(li_array.length === 0)
+  {
+    toc_list.parentNode.removeChild(toc_list);  
+    var toc_section = query('#table-of-contents');
+    toc_section.parentNode.removeChild(toc_section);
+  }
+  else{
+    toc_list.innerHTML = li_array.join('');
+  }
+  
 
   var slideshow = new SlideShow(queryAll('.slide'));
   
