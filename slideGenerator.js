@@ -11,7 +11,7 @@
 		var endOfTitle = slide.indexOf("</header>") + "</header>".length,
 			title = slide.substring(0, endOfTitle),
 			content = slide.substring(endOfTitle);
-		return title + "<section class=\"small\">" + content + "</section>";
+		return title + "\n<section class=\"small\">" + content.trim() + "</section>";
 	}
 
 	function enhanceSlide(slide){
