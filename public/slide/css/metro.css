@@ -53,7 +53,7 @@ body {
   background-color: black;
   border-radius: 10px;
   -moz-border-radius: 10px;
-  opacity: 0.35;
+  opacity: 0.85;
 
   -webkit-transform: scale(0.8) translateZ(0);
   -moz-transform: scale(0.8);
@@ -249,10 +249,10 @@ body.three-d div.presentation {
 }
 
 body.three-d div.slides {
-  -webkit-transform: translateX(50px) scale(0.8) rotateY(10deg);
-  -moz-transform: translateX(50px) scale(0.8) rotateY(10deg);
-  -o-transform: translateX(50px) scale(0.8) rotateY(10deg);
-  transform: translateX(50px) scale(0.8) rotateY(10deg);
+  -webkit-transform: translateX(50px) scale(0.93) rotateY(10deg);
+  -moz-transform: translateX(50px) scale(0.93) rotateY(10deg);
+  -o-transform: translateX(50px) scale(0.93) rotateY(10deg);
+  transform: translateX(50px) scale(0.93) rotateY(10deg);
 }
 
 /* Content */
@@ -361,7 +361,8 @@ a {
 
 li {
   list-style: none;
-  padding: 10px 0;
+  background: url(images/metro/image3.png) left center no-repeat;
+  padding: 22px 70px;
 }
 
 button {
@@ -395,7 +396,6 @@ section.small ul {
 }
 
 section.small li {
-  padding-bottom: 0;
 }
 
 section.middle {
