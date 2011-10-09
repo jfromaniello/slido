@@ -19,50 +19,63 @@ $(document).ready(function(){
   
   editor.renderer.setShowPrintMargin(false);
   editor.setTheme("ace/theme/twilight");
+  
+  function saveSlide(){
+    var locationToPost = window.location.href;
+    return $.post(locationToPost, {
+      slideMarkdown: editor.getSession().getValue()
+    });
+  }
 
   $(".previewslide").click(function(e){
-    if($(this).hasClass("disabled")) return false;
-    window.location.href = "/slide/" + currentId;
+    saveSlide()
+      .done(function(result){
+        window.location.href = "/slide/" + result.id;
+      }).fail(function(err){
+        $("#ErrorTemplate").tmpl({err: err}).prependTo($(".main"));
+      });
+    
   });
-  
-  if(currentId){
-    $(".previewslide").removeClass("disabled");
-  }
 
   $(".saveslide").click(function(e){
     e.preventDefault();
-    var locationToPost = window.location.href;
-
-    $.post(locationToPost, {
-      slideMarkdown: editor.getSession().getValue()
-    }).done(function(result){
+    saveSlide()
+    .done(function(result){
      $("#AlertTemplate").tmpl(result).prependTo($(".main"));
      currentId = result.id;
-     $(".previewslide").removeClass("disabled");
     }).fail(function(err){
-      //$("<div class='alert-message warning fade in' data-alert=alert'>Saved!</div>").alert();
+     $("#ErrorTemplate").tmpl({err: err}).prependTo($(".main"));
     });
-
     return false;
   });
 
   $(".showexample").click(function(e){  
     e.preventDefault();
     editor.getSession().setValue(
-      ['This is a test ',
+      ["<div class=\"slide transitionSlide\" id=\"my-sample-section\">",
+      "  <section class=\"middle\">",
+      "    <h2>This is a section</h2>",
+      "    <p>",
+      "     You can't write this in markdown... because it needs a valid ID and a class attribute. <br />", 
+      "     However... you can write an slide without section transitions.",
+      "    </p>",
+      "  </section>",
+      "</div>",
+      "",
+      'This is the first slide ',
       '==============',
       '',
-      'You can put some stuff here:',
+      'Put some stuff here',
       '',
       '* Item 1',
       '* Item 2',
       '* Item 3',
       '',
       '',
-      'And then another slide',
+      'Another slide',
       '======================',
       '',
-      'Test',
+      'Another list',
       '',
       '* a',
       '* b',
@@ -83,7 +96,7 @@ $(document).ready(function(){
         <br />
         <div class="well">
           <input type="button" class="btn primary saveslide" value="Save" />
-          <input type="button" class="btn primary previewslide disabled" value="Preview" />
+          <input type="button" class="btn primary previewslide" value="Preview" />
           <input type="button" class="btn info showexample" value="Show me an example" />
         </div>
       	<div id="editor" class="span12" style="height: 600px" >{{slideMarkdown}}</div>
@@ -95,6 +108,14 @@ $(document).ready(function(){
 <script id="AlertTemplate" type="text/x-jquery-tmpl">
 <div class="alert-message success fade in saved-alert" data-alert>
   The slide was saved! Save this link if you plan to <a href="/edit/${id}" rel="nofollow" title="Slido ${id}">edit the slide</a> in the future.
+  <a class="close" href="#">×</a>
+</div>
+</script>
+
+<script id="ErrorTemplate" type="text/x-jquery-tmpl">
+<div class="alert-message error fade in saved-alert" data-alert>
+  mhm.. something wrong happen. this is so embarasing. <br />
+  ${err}
   <a class="close" href="#">×</a>
 </div>
 </script>
