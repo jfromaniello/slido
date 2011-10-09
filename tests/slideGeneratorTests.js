@@ -66,6 +66,44 @@ vows.describe('SlideGenerator').addBatch({
         'dont touch the slide': function(topic){
             assert.equal(topic, "<div class=\"slide\">\nTest Test Test\n</div>"); 
         }
+    },
+
+    "when script has a ready slide and not ready":{
+        //"<div class=\"slide\">\n" + slide + "\n</div>\n"
+        topic: function () { 
+            var readySlide = 
+"<div class=\"slide transitionSlide\" id=\"offline-storage-title\">\n" +
+"  <section class=\"middle\">\n" +
+"   <h2>Offline / Storage</h2>\n" +
+"   <p>Expect the unexpected</p>\n" +
+"  </section>\n" +
+"</div>\n";
+
+            return slideGenerator.generateS6(readySlide + 
+                                             "title\n" +
+                                             "========== \n" +
+                                             "content\n" + 
+                                             "title\n" +
+                                             "========== \n" +
+                                             "content"); 
+        },
+
+        'dont touch the slide': function(topic){
+            assert.equal(topic, "<div class=\"slide transitionSlide\" id=\"offline-storage-title\">\n" +
+                                "  <section class=\"middle\">\n" +
+                                "   <h2>Offline / Storage</h2>\n" +
+                                "   <p>Expect the unexpected</p>\n" +
+                                "  </section>\n" +
+                                "</div>\n\n" +
+                                "<div class=\"slide\">\n" + 
+                                "<header><h1>title</h1></header>\n" + 
+                                "<section class=\"small\"><p>content</p></section>\n" +
+                                "</div>\n" +
+                                "<div class=\"slide\">\n" + 
+                                "<header><h1>title</h1></header>\n" + 
+                                "<section class=\"small\"><p>content</p></section>\n" +
+                                "</div>\n"); 
+        }
     }
 
 }).run(); // Run it

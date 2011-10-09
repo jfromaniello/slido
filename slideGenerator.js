@@ -27,8 +27,8 @@
 			lastIndex = 0;
 
 		do{
-			var slide = lastSlide ? html.substring(lastIndex)
-								  : html.substring(lastIndex, match.index - lastIndex);
+			var slide = lastSlide ? html.substr(lastIndex)
+								  : html.substr(lastIndex, match.index - lastIndex);
 			if(slide) {
 				if(slide.indexOf("<div class=\"slide") > -1){
 					slides.push(slide);
