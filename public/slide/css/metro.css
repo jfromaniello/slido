@@ -28,6 +28,14 @@ body {
   background: -moz-linear-gradient(top, #444, black);*/
 }
 
+blockquote {
+ font-style: italic;
+ quotes: "\201C" "\201D";
+}
+
+blockquote:before { content: open-quote; font-weight: bold; }
+blockquote:after { content: close-quote; font-weight: bold; }
+
 .slides {
   width: 100%;
   height: 100%;
