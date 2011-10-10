@@ -362,7 +362,7 @@ a {
 li {
   list-style: none;
   background: url(images/metro/image3.png) left center no-repeat;
-  padding: 22px 70px;
+  padding: 13px 70px;
 }
 
 button {
@@ -387,7 +387,7 @@ section.left {
 }
 
 section.small {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 section.small ul {
