@@ -294,7 +294,7 @@ header {
   font-weight: normal;
   color: white;
   font-weight: normal;
-  margin: 34px;
+  margin: 20px 25px;
   padding: 20px;
   font-size: 50px;
   text-align: center;
@@ -361,8 +361,8 @@ a {
 
 li {
   list-style: none;
-  background: url(images/metro/image3.png) left center no-repeat;
-  padding: 13px 70px;
+  background: url("images/metro/image3-bullet.png") no-repeat scroll left 8px transparent;
+  padding: 10px 58px;
 }
 
 button {
