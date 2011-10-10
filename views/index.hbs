@@ -31,6 +31,7 @@ $(document).ready(function(){
     e.preventDefault();
     saveSlide()
     .done(function(result){
+      $(".alert-message").remove();
      $("#AlertTemplate").tmpl(result).prependTo($(".main"));
      currentId = result.id;
     }).fail(function(err){
