@@ -158,14 +158,21 @@
         this._visited = true;
         this._makeBuildList();
       }
+
+    //   if (state !== 'current'){
+    // this._node.style.visibility = "hidden"; 
+    //   }
+      //this._node.style.visibility = "hidden";
       removeClass(this._node, this._states);
       addClass(this._node, state);
+      // this._node.style.visibility = "visible";
+
       this._currentState = state;
 
-      // delay first auto run. Really wish this were in CSS.
-      /*
-      this._runAutos();
-      */
+      // // delay first auto run. Really wish this were in CSS.
+      // /*
+      // this._runAutos();
+      // */
       var _t = this;
       setTimeout(function(){ _t._runAutos(); } , 400);
 
@@ -290,7 +297,7 @@
     try {
       this.current = h;
     } catch (e) { /* squeltch */ }
-    this.current = (!this.current) ? "landing-slide" : this.current.replace('#', '');
+    this.current = (!this.current) ? "landing-slide" : this.current.replace('#slide-', '');
     if (!query('#' + this.current)) {
       // if this happens is very likely that someone is coming from
       // a link with the old permalink format, i.e. #slide24
@@ -369,7 +376,7 @@
           history.pushState(this.current, 'Slide ' + this.current, '#' + this.current);
         }
       } else {
-        window.location.hash = this.current;
+        window.location.hash = "slide-" + this.current  ;
       }
       for (var x = currentIndex; x < currentIndex + 7; x++) {
         if (this._slides[x-4]) {
@@ -383,7 +390,7 @@
       if (!this._slides[this._getCurrentIndex() - 1].buildNext()) {
         var next = query('#' + this.current + ' + .slide');
         //this.current = (next) ? next.id : this.current;
-        this._update((next) ? next.id : this.current);
+        this._update((next) ? next.id : this.current); 
       }
     },
     prev: function() {
