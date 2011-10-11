@@ -172,6 +172,10 @@ blockquote:after { content: close-quote; font-weight: bold; }
   display: none;
 }
 
+.transitionSlide{
+  background: url(images/metro/section-background.png);
+  background-size: 100%;
+}
 .slide.transitionSlide p {
   margin: 0;
   margin-top: 28px; 
@@ -337,14 +341,14 @@ h1 {
 }
 
 .ggggggadient{
-      background: rgb(123,50,50); /* Old browsers */
+    background: rgb(123,50,50); /* Old browsers */
     background: -moz-linear-gradient(left, rgba(123,50,50,1) 0%, rgba(162,68,68,1) 80%, rgba(164,67,67,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(123,50,50,1)), color-stop(80%,rgba(162,68,68,1)), color-stop(100%,rgba(164,67,67,1))); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(left, rgba(123,50,50,1) 0%,rgba(162,68,68,1) 80%,rgba(164,67,67,1) 100%); /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(left, rgba(123,50,50,1) 0%,rgba(162,68,68,1) 80%,rgba(164,67,67,1) 100%); /* Opera11.10+ */
     background: -ms-linear-gradient(left, rgba(123,50,50,1) 0%,rgba(162,68,68,1) 80%,rgba(164,67,67,1) 100%); /* IE10+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7b3232', endColorstr='#a44343',GradientType=1 ); /* IE6-9 */
-    background: linear-gradient(left, rgba(123,50,50,1) 0%,rgba(162,68,68,1) 80%,rgba(164,67,67,1) 100%); /* W3C */
+    background: linear-gradient(left, rgba(123,50,50,t1) 0%,rgba(162,68,68,1) 80%,rgba(164,67,67,1) 100%); /* W3C */
 
 }
 
@@ -352,38 +356,30 @@ h1 {
 
 .slide.transitionSlide h2 {
     font-weight: normal;
-    background-color: #25A0DB;
     color: white;
     margin: 30px;
-    padding: 30px;
-    text-align: center;
+    padding: 0px 0px 0px 146px;
+    text-align: left;
     vertical-align: middle;
     font-weight: normal;
-    font-size: 46px;
+    font-size: 56px;
 }
 
-
-
-.slide.transitionSlide h2:after{
-  content: url(images/metro/white-arrow.gif) ;  
-  position: absolute;
-  left: 699px;
-  top: 300px;
-  padding: 36px 14px 18px 105px;
-
-  background-color: #D11141;
+.slide.transitionSlide h3 {
+    font-weight: normal;
+    color: white;
+    margin: 30px;
+    padding: 0px 0px 0px 146px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 36px;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-.slide.transitionSlide h2:after{
-  content: url(images/metro/white-arrow.gif) ;  
-  position: absolute;
-  left: 700px;
-  top: 320px;
-  padding: 36px 14px 18px 106px;
-  background-color: #D11141;
+.transitionSlide > section.middle {
+    height: 650px;
 }
-}
+
  
 h2:first-child {
   margin-top: 0;
@@ -466,7 +462,7 @@ section.small li {
 }
 
 section.middle {
-  line-height: 68px;
+  line-height: 54px;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
