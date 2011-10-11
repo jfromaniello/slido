@@ -46,6 +46,7 @@ blockquote:after { content: close-quote; font-weight: bold; }
   -webkit-transition: -webkit-transform 1.5s ease-in-out;
   -moz-transition: -moz-transform 1.5s ease-in-out;
   -o-transition: -o-transform 1.5s ease-in-out;
+  -ms-transition: -o-transform 1.5s ease-in-out;
   transition: transform 1.5s ease-in-out;
 }
 
@@ -66,6 +67,8 @@ blockquote:after { content: close-quote; font-weight: bold; }
   -webkit-transform: scale(0.9) translateZ(0);
   -moz-transform: scale(0.9);
   -o-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
 
   -webkit-transition-property: margin, -webkit-transform, opacity;
   -webkit-transition-duration: 0.3s, 0.3s, 0.3s;
@@ -79,6 +82,14 @@ blockquote:after { content: close-quote; font-weight: bold; }
   -o-transition-duration: 0.3s, 0.3s, 0.3s;
   -o-transition-timing-function: ease-in-out;
 
+  -ms-transition-property: margin, -ms-transform, opacity;
+  -ms-transition-duration: 0.3s, 0.3s, 0.3s;
+  -ms-transition-timing-function: ease-in-out;
+  
+  transition-property: margin, -moz-transform, opacity;
+  transition-duration: 0.3s, 0.3s, 0.3s;
+  transition-timing-function: ease-in-out;
+  
   /* NOTE(slightlyoff): simpler animations for slower boxes */
   /*
   -webkit-transition: margin 0.3s ease-in-out;
@@ -242,7 +253,9 @@ blockquote:after { content: close-quote; font-weight: bold; }
   margin-left: -450px;
   -webkit-transform: scale(1.0);
   -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
   -o-transform: scale(1.0);
+  transform: scale(1.0);
   opacity: 1.0;
 }
 
@@ -265,6 +278,7 @@ body.three-d div.slides {
   -webkit-transform: translateX(50px) scale(0.93) rotateY(10deg);
   -moz-transform: translateX(50px) scale(0.93) rotateY(10deg);
   -o-transform: translateX(50px) scale(0.93) rotateY(10deg);
+  -ms-transform: translateX(50px) scale(0.93) rotateY(10deg);
   transform: translateX(50px) scale(0.93) rotateY(10deg);
 }
 
@@ -625,7 +639,9 @@ video {
 [data-build] > * {
   -webkit-transition: opacity 0.5s ease-in-out 0.2s; 
   -moz-transition: opacity 0.5s ease-in-out 0.2s; 
-  -o-transition: opacity 0.5s ease-in-out 0.2s; 
+  -o-transition: opacity 0.5s ease-in-out 0.2s;
+  -ms-transition: opacity 0.5s ease-in-out 0.2s;
+  transition: opacity 0.5s ease-in-out 0.2s;
 }
 
 [data-build] > *.to-build {
