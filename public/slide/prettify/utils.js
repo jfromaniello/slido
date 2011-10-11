@@ -276,7 +276,7 @@
       }
       removeClass(this._buildList.shift(), 'to-build');
       return true;
-    },
+    }
   };
 
   //
