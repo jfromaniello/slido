@@ -373,7 +373,7 @@
       this._speakerNote.innerHTML = this._slides[currentIndex - 1].getSpeakerNote();
       if (history.pushState) {
         if (!dontPush) {
-          history.pushState(this.current, 'Slide ' + this.current, '#' + this.current);
+          history.pushState(this.current, 'Slide ' + this.current, '#' + "slide-" +  this.current);
         }
       } else {
         window.location.hash = "slide-" + this.current  ;
