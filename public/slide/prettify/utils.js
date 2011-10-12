@@ -10,6 +10,30 @@
     return Array.prototype.slice.call(list || [], 0);
   };
 
+//This library uses bind,... register bind is not defined in the browser 
+if (!Function.prototype.bind) {  
+  Function.prototype.bind = function (oThis) {  
+    if (typeof this !== "function") {  
+      // closest thing possible to the ECMAScript 5 internal IsCallable function  
+      throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");  
+    }  
+  
+    var fSlice = Array.prototype.slice,  
+        aArgs = fSlice.call(arguments, 1),   
+        fToBind = this,   
+        fNOP = function () {},  
+        fBound = function () {  
+          return fToBind.apply(this instanceof fNOP ? this  : oThis || window,  
+                               aArgs.concat(fSlice.call(arguments)));  
+        };  
+  
+    fNOP.prototype = this.prototype;  
+    fBound.prototype = new fNOP();  
+  
+    return fBound;  
+  };  
+}  
+
   var byId = function(id) {
     if (typeof id == 'string') { return doc.getElementById(id); }
     return id;
@@ -159,13 +183,8 @@
         this._makeBuildList();
       }
 
-    //   if (state !== 'current'){
-    // this._node.style.visibility = "hidden"; 
-    //   }
-      //this._node.style.visibility = "hidden";
       removeClass(this._node, this._states);
       addClass(this._node, state);
-      // this._node.style.visibility = "visible";
 
       this._currentState = state;
 
