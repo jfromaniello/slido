@@ -357,25 +357,35 @@ h1 {
 .slide.transitionSlide h2 {
     font-weight: normal;
     color: white;
-    margin: 30px;
-    padding: 0px 0px 0px 146px;
+    /*margin: 30px;
+    padding: 0px 0px 0px 146px;*/
+    /*
+    vertical-align: middle;*/
     text-align: left;
-    vertical-align: middle;
+    position: absolute;
+    top: 38%;
+    left: 19%;
     font-weight: normal;
     font-size: 56px;
-    width: 605;
+    width: 605px;
+    font-size: 56px;
 }
 
 .slide.transitionSlide h3 {
     font-weight: normal;
     color: white;
-    margin: 30px;
+    /*margin: 30px;
     padding: 0px 0px 0px 146px;
+    */
+
     text-align: left;
-    vertical-align: middle;
-    font-weight: normal;
-    font-size: 36px;
-    width: 605;
+    /*vertical-align: middle;*/
+    width: 595px;
+    position: absolute;
+    top: 45%;
+    left: 19%;
+    font-size: 34px;
+    line-height: 37px;
 }
 
 .transitionSlide > section.middle {
