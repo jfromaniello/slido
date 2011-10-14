@@ -533,7 +533,7 @@ if (!Function.prototype.bind) {
 
   // Initialize
   var li_array = [];
-  var transitionSlides = queryAll('.transitionSlide').forEach(function(el) {
+  var transitionSlides = queryAll('.transitionSlide:not(.firstSlide)').forEach(function(el) {
     var section_image = query('img', el);
     if(section_image){
       li_array.push( ['<li><a data-hash="', el.id, '">',

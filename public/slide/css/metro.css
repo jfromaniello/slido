@@ -172,10 +172,16 @@ blockquote:after { content: close-quote; font-weight: bold; }
   display: none;
 }
 
-.transitionSlide{
+.firstSlide{
+  background: url(images/metro/firstslide.png);
+  background-size: 100%;
+}
+
+.transitionSlide:not(.firstSlide){
   background: url(images/metro/section-background.png);
   background-size: 100%;
 }
+
 .slide.transitionSlide p {
   margin: 0;
   margin-top: 28px; 

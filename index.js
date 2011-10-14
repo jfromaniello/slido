@@ -81,7 +81,7 @@ app.get('/about', function(request, response){
 	response.render("about", {
 		title: "About",
 		inAbout: true
-	})	
+	});
 });
 
 app.get('/slide/:id', function(request, response){
