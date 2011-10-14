@@ -10,6 +10,7 @@
     "assert": "*",
     "futures": ">=2.3.1",
     "Array.prototype.forEachAsync": "*",
-    "mongolian": "*"
+    "mongolian": "*",
+    "everyauth": "0.2.23" 
   }
 }

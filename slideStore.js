@@ -7,9 +7,10 @@
 		self = this;
 
 
-	function saveSlide(content){
+	function saveSlide(content, userId){
 		var slide = {
-			text: content
+			text: content,
+			userId: userId
 		}, future = Futures.future();
 
 		new Mongolian(connString)
@@ -17,17 +18,18 @@
 			.insert(slide, function(err, value){
 				if(err){
 					future.fulfill(err);
-					return
+					return;
 				}
 				future.fulfill(err, slide._id.toString());
 			});
 		return future.passable();
-	};
+	}
 
-	function updateSlide (id, content){
+	function updateSlide (id, content, userId){
 		var slide = {
 			text: content,
-			_id: new Mongolian.ObjectId(id)
+			_id: new Mongolian.ObjectId(id),
+			userId: userId
 		}, future = Futures.future();
 
 		new Mongolian(connString)
@@ -35,19 +37,19 @@
 			.save(slide, function(err, value){
 				if(err){
 					future.fulfill(err);
-					return
+					return;
 				}	
 				future.fulfill(err, slide._id);
 			});
 		return future.passable();
-	};
+	}
 
 	function getSlide(id){
 		var query;
 		var future = Futures.future();
 
 		try{
-			 query = { _id: new Mongolian.ObjectId(id)}
+			 query = { _id: new Mongolian.ObjectId(id)};
 		}catch(err){
 			future.fulfill("Invalid slide id.");
 			return future.passable();
@@ -58,16 +60,16 @@
 			.findOne(query, function(err, slide){
 				if(err){
 					future.fulfill(err);
-					return
+					return;
 				}	
 				if(!slide){
 					future.fullfill(err, null);
 					return;
 				}
-				future.fulfill(err, slide.text);
+				future.fulfill(err, slide.text, slide.userId);
 			});
 		return future.passable();
-	};
+	}
 
 	module.exports.saveSlide = saveSlide;
 	module.exports.getSlide = getSlide; 
