@@ -526,7 +526,8 @@ if (!Function.prototype.bind) {
 
   // disable style theme stylesheets
   var linkEls = queryAll('link.theme');
-  var stylesheetPath = sessionStorage['theme'] || 'css/default.css';
+  var defaultTheme = queryAll('link.theme.default')[0];
+  var stylesheetPath = sessionStorage['theme'] || defaultTheme.href;
   linkEls.forEach(function(stylesheet) {
     stylesheet.disabled = !(stylesheet.href.indexOf(stylesheetPath) != -1);
   });

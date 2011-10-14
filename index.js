@@ -84,6 +84,10 @@ app.get('/about', function(request, response){
 	});
 });
 
+var allThemes = [
+	"moon","metro","sand","sea_wave","default"
+];
+
 app.get('/slide/:id', function(request, response){
 	slideStore.getSlide(request.params.id)
 		.when(function(err, markdown){
@@ -96,7 +100,17 @@ app.get('/slide/:id', function(request, response){
 				return;
 			}
 			var slideContent = slideGenerator.generateS6(markdown);
-			response.render("result", {slides: slideContent, layout: false});
+			var defaultTheme = request.query.defaultTheme || "default";
+			response.render("result", {
+				slides: slideContent, 
+				layout: false,
+				themes: allThemes.map(function(t){
+					return {
+						name: t,
+						isDefault: t == defaultTheme
+					};
+				})
+			});
 		});
 });
 

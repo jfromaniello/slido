@@ -27,11 +27,15 @@
     <title>HTML5 Presentation</title>
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
     <link id="prettify-link" href="prettify/prettify.css" rel="stylesheet" disabled />
+    <!-- 
     <link href="css/moon.css" class="theme" rel="stylesheet" />
     <link href="css/metro.css" class="theme" rel="stylesheet" />
     <link href="css/sand.css" class="theme" rel="stylesheet" />
     <link href="css/sea_wave.css" class="theme" rel="stylesheet" />
-    <link href="css/default.css" class="theme" rel="stylesheet" media="screen"  />
+    <link href="css/default.css" class="theme" rel="stylesheet" media="screen"  /> -->
+    {{#each themes}}
+    <link href="css/{{this.name}}.css" class="theme {{#if isDefault}}default{{/if}}" rel="stylesheet" />
+    {{/each}}
     <link href="css/common.css" rel="stylesheet" media="screen" />
   </head>
   <body>
