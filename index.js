@@ -58,7 +58,8 @@ app.post('/', function(request, response){
 		response.send("Markdown was empty...", 400);
 		return;
 	}
-	slideStore.saveSlide(request.body.slideMarkdown, request.user.id)
+	var userId = request.user ? request.user.id : null;
+	slideStore.saveSlide(request.body.slideMarkdown, userId)
 		.when(function(err, id){
 			if(err){
 				response.send(err, 500);
