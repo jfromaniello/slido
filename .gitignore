@@ -1,3 +1,5 @@
 node_modules
 slides/
 npm-debug.log
+*.sublime-project
+*.sublime-workspace
