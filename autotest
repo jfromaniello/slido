@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+var exec = require('child_process').exec, 
+    watchr = require('nodewatch');
+
+watchr
+    .add("./specs")
+    .add(".")
+    .onChange(function(file,prev,curr){
+        console.log("change in: ", file);
+        exec("vows ./specs/* --spec", { 
+              encoding: 'utf8',
+              timeout: 0,
+              maxBuffer: 200*1024,
+              killSignal: 'SIGTERM',
+              cwd: null,
+              env: null 
+            }, function(error, stdout, stderr){
+              process.stdout.write(stdout);
+            });
+    });

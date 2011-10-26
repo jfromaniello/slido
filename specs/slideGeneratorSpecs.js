@@ -117,4 +117,4 @@ vows.describe('SlideGenerator').addBatch({
         }
     }
 
-}).run(); // Run it
+}).export(module);
