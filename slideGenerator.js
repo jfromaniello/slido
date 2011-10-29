@@ -40,8 +40,6 @@
 			lastIndex = match.index;
 		}while((match = regex.exec(html), lastSlide = !lastSlide && !match), match || lastSlide);
 
-		
-
 		return slides
 			.map(function(slide){
 				if(slide.indexOf("<div class=\"slide") > -1) return slide;

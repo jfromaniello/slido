@@ -4,6 +4,7 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
   <script type="text/javascript" src="http://static.ak.fbcdn.net/connect/en_US/core.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<style type="text/css">
       /* Override some defaults */
       html, body {
@@ -69,8 +70,8 @@
     <div class="container">
       <a href="#" class="brand">slido</a>
       <ul class="nav">
-        <li {{#if inHome}}class="active"{{/if}}><a href="/">Home</a></li>
-        <li {{#if inAbout}}class="active"{{/if}}><a href="/about">About</a></li>
+        <li id="home"><a href="/">Home</a></li>
+        <li id="about"><a href="/about">About</a></li>
         {{#if everyauth.user}}
         <li><a href="/logout">logout</a></li>
         {{/if}}
@@ -94,4 +95,19 @@
 </div>
 {{{body}}}
 </body>
+
+  <script type="text/javascript">
+    function endsWith(str, suffix) {
+        return str.indexOf(suffix, str.length - suffix.length) !== -1;
+    }
+
+    $(document).ready(function() {
+      $("li.active").removeClass("active");
+      if(endsWith(document.location.href.toString(), "about")){
+        $("li#about").addClass("active");
+      }else{
+        $("li#home").addClass("active");
+      }
+    });
+  </script>
 </html>

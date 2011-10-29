@@ -12,7 +12,8 @@
     "Array.prototype.forEachAsync": "*",
     "mongolian": "*",
     "everyauth": "0.2.23",
-    "nodewatch": "*"
+    "nodewatch": "*",
+    "tobi": "0.3.1" 
   },
   "devDependencies": { 
     "vows": "0.5.11" 
